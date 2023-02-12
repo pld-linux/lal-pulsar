@@ -1,0 +1,14 @@
+--- lalpulsar-5.2.0/Makefile.am.orig	2022-11-03 23:47:47.060846839 +0100
++++ lalpulsar-5.2.0/Makefile.am	2023-02-11 17:33:50.397001264 +0100
+@@ -25,11 +25,6 @@ SUBDIRS = \
+ user_environment = \
+ 	set $(PACKAGE)_PREFIX $(prefix); \
+ 	set $(PACKAGE)_DATADIR $(pkgdatadir); \
+-	prepend MANPATH $(mandir); \
+-	prepend OCTAVE_PATH $(octexecdir); \
+-	prepend PATH $(bindir); \
+-	prepend PKG_CONFIG_PATH $(libdir)/pkgconfig; \
+-	prepend PYTHONPATH $(pyexecdir) $(pythondir); \
+ 	$(END_OF_LIST)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig

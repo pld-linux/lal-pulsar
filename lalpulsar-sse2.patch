@@ -1,0 +1,15 @@
+--- lalpulsar-5.2.0/bin/GCT/Makefile.am.orig	2022-07-29 18:19:59.258738637 +0200
++++ lalpulsar-5.2.0/bin/GCT/Makefile.am	2023-02-11 17:56:13.303059452 +0100
+@@ -36,10 +36,10 @@ lalpulsar_HierarchSearchGCT_SOURCES += \
+ 	$(END_OF_LIST)
+ 
+ lalpulsar_HierarchSearchGCT_CPPFLAGS += -DHS_OPTIMIZATION -DHIERARCHSEARCHGCT -DGC_SSE2_OPT
+-lalpulsar_HierarchSearchGCT_CFLAGS += $(SSE2_FLAGS)
++lalpulsar_HierarchSearchGCT_CFLAGS += $(SSE2_CFLAGS)
+ 
+ lalpulsar_HierarchSearchGCT_no_num_count_CPPFLAGS += -DHS_OPTIMIZATION -DHIERARCHSEARCHGCT -DGC_SSE2_OPT
+-lalpulsar_HierarchSearchGCT_no_num_count_CFLAGS += $(SSE2_FLAGS)
++lalpulsar_HierarchSearchGCT_no_num_count_CFLAGS += $(SSE2_CFLAGS)
+ 
+ endif
+ 
