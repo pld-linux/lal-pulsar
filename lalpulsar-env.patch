@@ -1,7 +1,7 @@
---- lalpulsar-5.2.0/Makefile.am.orig	2022-11-03 23:47:47.060846839 +0100
-+++ lalpulsar-5.2.0/Makefile.am	2023-02-11 17:33:50.397001264 +0100
-@@ -25,11 +25,6 @@ SUBDIRS = \
- user_environment = \
+--- lalpulsar-6.1.0/Makefile.am.orig	2024-06-09 08:48:17.267707892 +0200
++++ lalpulsar-6.1.0/Makefile.am	2024-06-09 09:06:02.015272993 +0200
+@@ -26,11 +26,6 @@ user_environment = \
+ 	trailingcolon MANPATH; \
  	set $(PACKAGE)_PREFIX $(prefix); \
  	set $(PACKAGE)_DATADIR $(pkgdatadir); \
 -	prepend MANPATH $(mandir); \

@@ -5,12 +5,12 @@
 Summary:	LAL routines for pulsar and continuous wave gravitational wave data analysis
 Summary(pl.UTF-8):	Procedury LAL do analizy danych fal grawitacyjnych pulsarów i fal ciągłych
 Name:		lal-pulsar
-Version:	5.2.0
+Version:	6.1.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalpulsar-%{version}.tar.xz
-# Source0-md5:	1a26a6d467b837b4c70f8fc5969d9c02
+# Source0-md5:	bade823b2acebeef91252784ad9c7ee2
 Patch0:		lalpulsar-env.patch
 Patch1:		lalpulsar-format.patch
 Patch2:		lalpulsar-sse2.patch
@@ -22,10 +22,10 @@ BuildRequires:	fftw3-devel >= 3
 BuildRequires:	fftw3-single-devel >= 3
 BuildRequires:	gsl-devel >= 1.13
 BuildRequires:	help2man >= 1.37
-BuildRequires:	lal-devel >= 7.2.2
-BuildRequires:	lal-frame-devel >= 2.0.0
+BuildRequires:	lal-devel >= 7.5.0
+BuildRequires:	lal-frame-devel >= 3.0.0
 BuildRequires:	lal-inference-devel >= 4.1.0
-BuildRequires:	lal-simulation-devel >= 3.1.0
+BuildRequires:	lal-simulation-devel >= 5.4.0
 BuildRequires:	libgomp-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
@@ -39,10 +39,10 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	gsl >= 1.13
-Requires:	lal >= 7.2.2
-Requires:	lal-frame >= 2.0.0
+Requires:	lal >= 7.5.0
+Requires:	lal-frame >= 3.0.0
 Requires:	lal-inference >= 4.1.0
-Requires:	lal-simulation >= 3.1.0
+Requires:	lal-simulation >= 5.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -59,10 +59,10 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki lal-pulsar
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gsl-devel >= 1.13
-Requires:	lal-devel >= 7.2.2
-Requires:	lal-frame-devel >= 2.0.0
+Requires:	lal-devel >= 7.5.0
+Requires:	lal-frame-devel >= 3.0.0
 Requires:	lal-inference-devel >= 4.1.0
-Requires:	lal-simulation-devel >= 3.1.0
+Requires:	lal-simulation-devel >= 5.4.0
 
 %description devel
 Header files for lal-pulsar library.
@@ -87,7 +87,7 @@ Summary:	Octave interface for LAL Pulsar
 Summary(pl.UTF-8):	Interfejs Octave do biblioteki LAL Pulsar
 Group:		Applications/Math
 Requires:	%{name} = %{version}-%{release}
-Requires:	octave-lal >= 7.2.2
+Requires:	octave-lal >= 7.5.0
 
 %description -n octave-lalpulsar
 Octave interface for LAL Pulsar.
@@ -100,7 +100,7 @@ Summary:	Python bindings for LAL Pulsar
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki LAL Pulsar
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-lal >= 7.2.4
+Requires:	python3-lal >= 7.5.0
 Requires:	python3-lalframe >= 2.0.0
 Requires:	python3-lalinference >= 4.1.0
 Requires:	python3-lalsimulation >= 3.1.0
@@ -121,8 +121,6 @@ Wiązania Pythona do biblioteki LAL Pulsar.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-
-%{__sed} -i -e '1s,/usr/bin/env tclsh,/usr/bin/tclsh,' bin/MakeData/lalpulsar_CopySFTs
 
 %build
 %{__libtoolize}
@@ -157,7 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/lalpulsar_Compute*
-%attr(755,root,root) %{_bindir}/lalpulsar_CopySFTs
+%attr(755,root,root) %{_bindir}/lalpulsar_CopyPublicSFTs
 %attr(755,root,root) %{_bindir}/lalpulsar_DriveHoughMulti
 %attr(755,root,root) %{_bindir}/lalpulsar_FstatMetric_v2
 %attr(755,root,root) %{_bindir}/lalpulsar_HierarchSearchGCT
@@ -187,7 +185,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/lalpulsar_synthesize*
 %attr(755,root,root) %{_bindir}/lalpulsar_version
 %attr(755,root,root) %{_libdir}/liblalpulsar.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblalpulsar.so.26
+%attr(755,root,root) %ghost %{_libdir}/liblalpulsar.so.29
 %{_datadir}/lalpulsar
 /etc/shrc.d/lalpulsar-user-env.csh
 /etc/shrc.d/lalpulsar-user-env.fish
