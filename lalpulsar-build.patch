@@ -1,0 +1,11 @@
+--- lalpulsar-6.1.0/bin/GCT/GCTtoplist.c.orig	2024-03-25 21:33:49.628409810 +0100
++++ lalpulsar-6.1.0/bin/GCT/GCTtoplist.c	2024-06-09 20:35:11.217249165 +0200
+@@ -242,7 +242,7 @@ static int gctFstat_final_qsort( const v
+ 
+ /* creates a toplist with length elements,
+    returns -1 on error (usually out of memory), else 0 */
+-int create_gctFstat_toplist( toplist_t **tl, UINT8 length, UINT4 whatToSortBy )
++int create_gctFstat_toplist( toplist_t **tl, UINT8 length, SortBy_t whatToSortBy )
+ {
+ #ifdef DEBUG_SORTING
+   if ( !debugfp ) {

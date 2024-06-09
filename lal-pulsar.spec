@@ -14,6 +14,7 @@ Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalpulsar-%{version}.t
 Patch0:		lalpulsar-env.patch
 Patch1:		lalpulsar-format.patch
 Patch2:		lalpulsar-sse2.patch
+Patch3:		lalpulsar-build.patch
 URL:		https://wiki.ligo.org/Computing/LALSuite
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -121,6 +122,7 @@ Wiązania Pythona do biblioteki LAL Pulsar.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
