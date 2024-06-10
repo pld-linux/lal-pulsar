@@ -131,6 +131,7 @@ Wiązania Pythona do biblioteki LAL Pulsar.
 %{__autoheader}
 %{__automake}
 %configure \
+	PYTHON=%{__python3} \
 	--disable-silent-rules \
 	--enable-swig
 %{__make}
