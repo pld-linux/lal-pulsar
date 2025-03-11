@@ -6,7 +6,7 @@ Summary:	LAL routines for pulsar and continuous wave gravitational wave data ana
 Summary(pl.UTF-8):	Procedury LAL do analizy danych fal grawitacyjnych pulsarów i fal ciągłych
 Name:		lal-pulsar
 Version:	6.1.0
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/lalpulsar-%{version}.tar.xz
